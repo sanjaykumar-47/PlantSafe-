@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="/static/leaf4.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+  <title>Plant Leaf Disease Detection</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000;
+      position: relative;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-bg video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 50px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    header .logo {
+      color: #fff;
+      font-size: 24px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 800px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin-bottom: 30px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    a {
+      display: inline-block;
+      font-size: 1.2em;
+      background: #fff;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      color: #111;
+      margin: 10px 5px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: #03a9f4;
+      color: #fff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9em;
+      color: #aaa;
+      text-align: center;
+    }
+
+    /* Media query for laptops */
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <div class="video-bg">
+    <video autoplay muted loop>
+      <source src="/static/drone.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <header>
+    <div class="logo">Plant Disease Detection</div>
+  </header>
+
+  <div class="container">
+    <h1>Plant Leaf Disease Prediction System</h1>
+    <p>Welcome to the Plant Leaf Disease Prediction System! 🌿🔍</p>
+
+    <p>Our mission is to help identify plant diseases efficiently.</p>
+    
+    <div class="button-container">
+      <a href="/disease_recognition">Go to Leaf Disease Prediction</a>
+      <a href="/about">About</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Plant Disease Detection System. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

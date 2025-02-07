@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Plant Disease Recognition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 2.5em;
+        }
+
+        p {
+            margin: 20px;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul {
+            list-style-type: square;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+            font-size: 1.2em;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #03a9f4;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #0288d1;
+        }
+
+        /* Background Video Styles */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-bg video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        /* Content Container */
+        .content {
+            position: relative;
+            z-index: 1;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p,
+            li {
+                font-size: 1em;
+            }
+
+            ul {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p,
+            li {
+                font-size: 0.9em;
+            }
+
+            ul {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Video -->
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="../static/drone.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>About</h1>
+        <p>This dataset consists of about 87K RGB images of healthy and diseased crop leaves categorized into 38 classes.</p>
+        <ul>
+            <li>Train: 70,295 images</li>
+            <li>Validation: 17,572 images</li>
+            <li>Test: 33 images</li>
+        </ul>
+        <a href="/">Home</a> | <a href="/disease_recognition">Disease Recognition</a>
+    </div>
+</body>
+
+</html>

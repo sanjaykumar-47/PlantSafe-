@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Leaf Disease Prediction</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 50px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    header .logo {
+      color: #fff;
+      font-size: 24px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-bg video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .container {
+      margin-top: 100px;
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    label {
+      font-size: 1em;
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="file"],
+    select,
+    button {
+      font-size: 1em;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      background: #03a9f4;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0288d1;
+    }
+
+    a {
+      color: #03a9f4;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #0288d1;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .result h2 {
+      font-size: 1.5em;
+      color: #03a9f4;
+      margin-bottom: 10px;
+    }
+
+    .result p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    .result p strong {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Video Background -->
+  <div class="video-bg">
+    <video autoplay muted loop>
+      <source src="static/drone.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <header>
+    <div class="logo">Plant Disease Detection</div>
+  </header>
+
+  <div class="container">
+    <h1>Plant Leaf Disease Prediction</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <label for="image">Upload an Image:</label>
+      <input type="file" name="image" id="image" required>
+
+      <label for="language">Select Language:</label>
+      <select name="language" id="language">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="ta">Tamil</option>
+        <option value="hi">Hindi</option>
+        <option value="ml">Malayalam</option>
+      </select>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_result %}
+    <div class="result">
+      <h2>Prediction Result: {{ prediction_result }}</h2>
+      <p><strong>Description:</strong> {{ disease_description }}</p>
+      {% if translated_description %}
+      <p><strong>Translated Description:</strong> {{ translated_description }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <a href="/">Home</a> | <a href="/about">About</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Plant Disease Detection System. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>
+
